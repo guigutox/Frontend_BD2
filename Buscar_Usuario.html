@@ -24,6 +24,12 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="Reservar.html">Reservar</a>
                 </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="Realizar_Experimento.html">Realizar Experimentos</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="">Logout</a>
+                </li>
             </ul>
         </div>
     </nav>
@@ -40,9 +46,85 @@
 
 
       <div class="row justify-content-center">
-      <button class="btn btn-primary" style="background-color: red; border-color: black;">Deletar</button>
-      <button class="btn btn-primary" style="background-color: rgb(29, 77, 23); border-color: black;">Alterar</button>
-      </div>  
+        <form id="userForm">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="cpf">CPF:</label>
+                    <input type="text" id="cpf" name="cpf" required class="form-control">
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required class="form-control">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" required class="form-control">
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="telefone">Telefone:</label>
+                    <input type="text" id="telefone" name="telefone" required class="form-control">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="tipo">Tipo de Usuário:</label>
+                <select id="tipo" name="tipo" required class="form-control">
+                    <option value="" disabled selected style="display:none;">Selecione uma opção</option>
+                    <option value="tecnico">Técnico</option>
+                    <option value="professor">Professor</option>
+                </select>
+            </div>
+
+            <!-- Campos específicos para Técnico -->
+            <div id="tecnico-fields" style="display: none;">
+                <div class="form-group">
+                    <label for="certificado">Certificado:</label>
+                    <input type="text" id="certificado" name="certificado" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="crq">Número do CRQ:</label>
+                    <input type="number" id="crq" name="crq" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="carga_horaria">Carga Horária:</label>
+                    <input type="number" id="carga_horaria" name="carga_horaria" class="form-control">
+                </div>
+            </div>
+
+            <!-- Campos específicos para Professor -->
+            <div id="professor-fields" style="display: none;">
+                <div class="form-group">
+                    <label for="curso_ministrados">Cursos Ministrados:</label>
+                    <input type="text" id="curso_ministrados" name="curso_ministrados" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="experiencia_ensino">Experiência de Ensino:</label>
+                    <textarea id="experiencia_ensino" name="experiencia_ensino" class="form-control"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="area_especializacao">Área de Especialização:</label>
+                    <input type="text" id="area_especializacao" name="area_especializacao" class="form-control">
+                </div>
+            </div>
+
+            <div class="form-group text-center">
+                <button class="btn btn-primary" id="btnDeletar" style="background-color: red; border-color: black;">Deletar</button>
+                <button class="btn btn-primary" id="btnAlterar" style="background-color: rgb(29, 77, 23); border-color: black;">Alterar</button>
+            </div>
+        </form>
+      </div>
+
+
+
       
       <script src="assets/js/buscar_usuario.js"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
